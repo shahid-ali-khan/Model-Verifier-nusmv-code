@@ -1,0 +1,66 @@
+MODULE main
+VAR
+Page : {IState, LoginState, UserState, AdminState, PreferenceState};
+e1: boolean;
+e2: boolean;
+e3: boolean;
+e4: boolean;
+test: {0, 1, 2, 3,4};
+usermode: {0,10,20};
+ASSIGN
+init(Page) := LoginState;
+init(test) := 0;
+init(e1):=FALSE;
+init(e2):=FALSE;
+init(e3):=FALSE;
+init(e4):=FALSE;
+init(usermode):=0;
+DEFINE
+T_I_LoginState := (Page=IState) ;
+T_LoginState_UserState := (Page = LoginState)&e1&usermode=10;
+T_UserState_AdminState := (Page = UserState)&e2;
+T_LginState_AdminState := (Page = LoginState)&e3&usermode=20;
+T_LoginState_PreferenceState := (Page = LoginState)&e4;
+ASSIGN
+next(test):={1,2,3,4};
+next(usermode):={10,20};
+next(Page):=
+	case
+		T_I_LoginState: LoginState;
+		T_LoginState_UserState : UserState;
+		T_UserState_AdminState : AdminState;
+		T_LoginState_UserState : AdminState;
+		T_LoginState_PreferenceState :PreferenceState;
+		TRUE : Page;
+	esac;
+next(e1):=case 
+	(test=1):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e2):=case 
+	(test=2):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e3):=case 
+	(test=3):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e4):=case 
+	(test=4):TRUE;
+	TRUE:FALSE;
+	esac;
+
+SPEC
+AG((Page=LoginState)->EF(Page=PreferenceState))
+
+--SPEC
+--EF(Page=DState)
+--EF(Page=CState)
+--AG((Page=LoginState)->EF(Page=LoginState))
+
+--SPEC
+--AG((Page=LoginState)->EF(Page=AdminState & usermode=10))
+
+SPEC
+AG((Page=PreferenceState)->EF(Page=LoginState))
+-- means the line is commented

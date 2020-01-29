@@ -1,0 +1,606 @@
+MODULE main
+VAR
+Page : {IState, LoginPageState, UserDashboardState, ProfileState, CourseOverviewState, PreferenceState, GradesState, UserProfileEditState, AdminDashboardState, CoursePageState, PreferencePageState, ProfilePageState, EditPageState, CPPState, DBMSState, ChangePasswordState, PermissionState};
+e1: boolean;
+e2: boolean;
+e3: boolean;
+e4: boolean;
+e5: boolean;
+e6: boolean;
+e7: boolean;
+e8: boolean;
+e9: boolean;
+e10: boolean;
+e11: boolean;
+e12: boolean;
+e13: boolean;
+e14: boolean;
+e15: boolean;
+e16: boolean;
+e17: boolean;
+e18: boolean;
+e19: boolean;
+e20: boolean;
+e21: boolean;
+e22: boolean;
+e23: boolean;
+e24: boolean;
+e25: boolean;
+e26: boolean;
+e27: boolean;
+e28: boolean;
+e29: boolean;
+e30: boolean;
+e31: boolean;
+e32: boolean;
+e33: boolean;
+e34: boolean;
+e35: boolean;
+e36: boolean;
+e37: boolean;
+e38: boolean;
+e39: boolean;
+e40: boolean;
+e41: boolean;
+e42: boolean;
+e43: boolean;
+e44: boolean;
+e45: boolean;
+e46: boolean;
+e47: boolean;
+e48: boolean;
+e49: boolean;
+e50: boolean;
+e51: boolean;
+e52: boolean;
+e53: boolean;
+e54: boolean;
+e55: boolean;
+e56: boolean;
+e57: boolean;
+e58: boolean;
+e59: boolean;
+e60: boolean;
+e61: boolean;
+e62: boolean;
+e63: boolean;
+e64: boolean;
+e65: boolean;
+e66: boolean;
+e67: boolean;
+e68: boolean;
+e69: boolean;
+
+test: {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,
+63,64,65,66,67,68,69};
+
+usermode: {0,10,20};
+
+ASSIGN
+init(Page) := LoginPageState;
+init(test) := 0;
+init(e1):=FALSE;
+init(e2):=FALSE;
+init(e3):=FALSE;
+init(e4):=FALSE;
+init(e5):=FALSE;
+init(e6):=FALSE;
+init(e7):=FALSE;
+init(e8):=FALSE;
+init(e9):=FALSE;
+init(e10):=FALSE;
+init(e11):=FALSE;
+init(e12):=FALSE;
+init(e13):=FALSE;
+init(e14):=FALSE;
+init(e15):=FALSE;
+init(e16):=FALSE;
+init(e17):=FALSE;
+init(e18):=FALSE;
+init(e19):=FALSE;
+init(e20):=FALSE;
+init(e21):=FALSE;
+init(e22):=FALSE;
+init(e23):=FALSE;
+init(e24):=FALSE;
+init(e25):=FALSE;
+init(e26):=FALSE;
+init(e27):=FALSE;
+init(e28):=FALSE;
+init(e29):=FALSE;
+init(e30):=FALSE;
+init(e31):=FALSE;
+init(e32):=FALSE;
+init(e33):=FALSE;
+init(e34):=FALSE;
+init(e35):=FALSE;
+init(e36):=FALSE;
+init(e37):=FALSE;
+init(e38):=FALSE;
+init(e39):=FALSE;
+init(e40):=FALSE;
+init(e41):=FALSE;
+init(e42):=FALSE;
+init(e43):=FALSE;
+init(e44):=FALSE;
+init(e45):=FALSE;
+init(e46):=FALSE;
+init(e47):=FALSE;
+init(e48):=FALSE;
+init(e49):=FALSE;
+init(e50):=FALSE;
+init(e51):=FALSE;
+init(e52):=FALSE;
+init(e53):=FALSE;
+init(e54):=FALSE;
+init(e55):=FALSE;
+init(e56):=FALSE;
+init(e57):=FALSE;
+init(e58):=FALSE;
+init(e59):=FALSE;
+init(e60):=FALSE;
+init(e61):=FALSE;
+init(e62):=FALSE;
+init(e63):=FALSE;
+init(e64):=FALSE;
+init(e65):=FALSE;
+init(e66):=FALSE;
+init(e67):=FALSE;
+init(e68):=FALSE;
+init(e69):=FALSE;
+
+init(usermode):=0;
+--usermode 20 I have used for user login
+
+DEFINE
+
+T_I_LoginPage := (Page=IState);
+T_LoginPage_UserDashboard := (Page= LoginPageState)&e1&usermode=20;
+T_LoginPage_CourseOverview := (Page= LoginPageState)&e2&usermode=20;
+T_LoginPage_Grades := (Page= LoginPageState)&e3&usermode=20;
+T_LoginPage_Preference := (Page= LoginPageState)&e4&usermode=20;
+
+T_UserDashboard_CourseOverview := (Page= UserDashboardState)&e5&usermode=20;
+T_UserDashboard_Grades := (Page= UserDashboardState)&e6&usermode=20;
+T_UserDashboard_Preference := (Page= UserDashboardState)&e7&usermode=20;
+T_UserDashboard_LoginPage := (Page= UserDashboardState)&e8&usermode=20;
+T_UserDashboard_Profile := (Page= UserDashboardState)&e9&usermode=20;
+T_UserDashboard_UserEditProfile := (Page= UserDashboardState)&e10&usermode=20;
+
+T_Profile_UserEditProfile := (Page= ProfileState)&e11&usermode=20;
+
+T_CourseOverview_Grades := (Page= CourseOverviewState)&e12&usermode=20;
+T_CourseOverview_Preference := (Page= CourseOverviewState)&e13&usermode=20;
+T_CourseOverview_LoginPage := (Page= CourseOverviewState)&e14&usermode=20;
+T_CourseOverview_UserDashboard := (Page= CourseOverviewState)&e15&usermode=20;
+
+T_Preference_LoginPage := (Page= PreferenceState)&e16&usermode=20;
+T_Preference_UserDashboard := (Page= PreferenceState)&e17&usermode=20;
+T_Preference_CourseOverview := (Page= PreferenceState)&e18&usermode=20;
+T_Preference_Grades := (Page= PreferenceState)&e19&usermode=20;
+
+T_Grades_LoginPage := (Page= GradesState)&e20&usermode=20;
+T_Grades_UserDashboard := (Page= GradesState)&e21&usermode=20;
+T_Grades_CourseOverview := (Page= GradesState)&e22&usermode=20;
+T_Grades_Preference := (Page= GradesState)&e23&usermode=20;
+
+T_AdminDashboard_LoginPage := (Page= AdminDashboardState)&e24&usermode=10;
+T_AdminDashboard_CoursePage := (Page= AdminDashboardState)&e25&usermode=10;
+T_AdminDashboard_CPP := (Page= AdminDashboardState)&e26&usermode=10;
+T_AdminDashboard_DBMS := (Page= AdminDashboardState)&e27&usermode=10;
+T_AdminDashboard_ProfilePage := (Page= AdminDashboardState)&e28&usermode=10;
+T_AdminDashboard_EditPage := (Page= AdminDashboardState)&e29&usermode=10;
+T_AdminDashboard_PreferencePage := (Page= AdminDashboardState)&e30&usermode=10;
+T_AdminDashboard_ChangePassword := (Page= AdminDashboardState)&e31&usermode=10;
+T_AdminDashboard_Permission := (Page= AdminDashboardState)&e32&usermode=10;
+
+T_CoursePage_LoginPage := (Page= CoursePageState)&e33&usermode=10;
+T_CoursePage_CPP := (Page= CoursePageState)&e34&usermode=10;
+T_CoursePage_DBMS := (Page= CoursePageState)&e35&usermode=10;
+T_CoursePage_AdminDashboard := (Page= CoursePageState)&e36&usermode=10;
+T_CoursePage_EditPage := (Page= CoursePageState)&e37&usermode=10;
+T_CoursePage_PreferencePage := (Page= CoursePageState)&e38&usermode=10;
+T_CoursePage_ChangePassword := (Page= CoursePageState)&e39&usermode=10;
+T_CoursePage_Permission := (Page= CoursePageState)&e40&usermode=10;
+
+T_PreferencePage_PermissionPage := (Page= PreferencePageState)&e41&usermode=10;
+T_PreferencePage_ChangePassword := (Page= PreferencePageState)&e42&usermode=10;
+
+T_ProfilePage_EditPage := (Page= ProfilePageState)&e43&usermode=10;
+T_ProfilePage_LoginPage := (Page= ProfilePageState)&e44&usermode=10;
+T_ProfilePage_AdminDashboard := (Page= ProfilePageState)&e45&usermode=10;
+T_ProfilePage_CoursePage := (Page= ProfilePageState)&e46&usermode=10;
+T_ProfilePage_CPP := (Page= ProfilePageState)&e47&usermode=10;
+T_ProfilePage_DBMS := (Page= ProfilePageState)&e48&usermode=10;
+T_ProfilePage_PreferencePage := (Page= ProfilePageState)&e49&usermode=10;
+T_ProfilePage_ChangePassword := (Page= ProfilePageState)&e50&usermode=10;
+T_ProfilePage_Permission := (Page= ProfilePageState)&e51&usermode=10;
+
+T_LoginPage_AdminDashboard := (Page= LoginPageState)&e52&usermode=10;
+T_LoginPage_CoursePage := (Page= LoginPageState)&e53&usermode=10;
+T_LoginPage_CPP := (Page= LoginPageState)&e54&usermode=10;
+T_LoginPage_DBMS := (Page= LoginPageState)&e55&usermode=10;
+T_LoginPage_ProfilePage := (Page= LoginPageState)&e56&usermode=10;
+T_LoginPage_EditPage := (Page= LoginPageState)&e57&usermode=10;
+T_LoginPage_PreferencePage := (Page= LoginPageState)&e58&usermode=10;
+T_LoginPage_ChangePassword := (Page= LoginPageState)&e59&usermode=10;
+T_LoginPage_Permission := (Page= LoginPageState)&e60&usermode=10;
+
+T_EditPage_LoginPage := (Page= EditPageState)&e61&usermode=10;
+T_EditPage_AdminDaschboard := (Page= EditPageState)&e62&usermode=10;
+T_EditPage_CoursePage := (Page= EditPageState)&e63&usermode=10;
+T_EditPage_CPP := (Page= EditPageState)&e64&usermode=10;
+T_EditPage_DBMS := (Page= EditPageState)&e65&usermode=10;
+T_EditPage_ProfilePage := (Page= EditPageState)&e66&usermode=10;
+T_EditPage_PreferencePage := (Page= EditPageState)&e67&usermode=10;
+T_EditPage_ChangePassword := (Page= EditPageState)&e68&usermode=10;
+T_EditPage_Permission := (Page= EditPageState)&e69&usermode=10;
+
+
+ASSIGN
+next(test):={1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69};
+next(usermode):={10,20};
+next(Page):=
+	case
+		T_I_LoginPage : (IState);
+        T_LoginPage_UserDashboard : (LoginPageState);
+        T_LoginPage_CourseOverview : (CourseOverviewState);
+        T_LoginPage_Grades : (GradesState);
+        T_LoginPage_Preference : (PreferenceState);
+        T_UserDashboard_CourseOverview : (CourseOverviewState);
+        T_UserDashboard_Grades : (GradesState);
+        T_UserDashboard_Preference : (PreferenceState);
+        T_UserDashboard_LoginPage : (LoginPageState);
+        T_UserDashboard_Profile : (ProfileState);
+        T_UserDashboard_UserEditProfile : (UserProfileEditState);
+        T_Profile_UserEditProfile : (UserProfileEditState);
+        T_CourseOverview_Grades : (GradesState);
+        T_CourseOverview_Preference : ( PreferenceState);
+        T_CourseOverview_LoginPage : (LoginPageState);
+        T_CourseOverview_UserDashboard : (UserDashboardState);
+        T_Preference_LoginPage : (LoginPageState);
+        T_Preference_UserDashboard : (UserDashboardState);
+        T_Preference_CourseOverview : (CourseOverviewState);
+        T_Preference_Grades : (GradesState);
+        T_Grades_LoginPage : (LoginPageState);
+        T_Grades_UserDashboard : (UserDashboardState);
+        T_Grades_CourseOverview : (CourseOverviewState);
+        T_Grades_Preference : (PreferenceState);
+		T_AdminDashboard_LoginPage : (LoginPageState);
+        T_AdminDashboard_CoursePage : (CoursePageState);
+        T_AdminDashboard_CPP : (CPPState);
+        T_AdminDashboard_DBMS : (DBMSState);
+        T_AdminDashboard_ProfilePage : (ProfilePageState);
+        T_AdminDashboard_EditPage : (EditPageState);
+        T_AdminDashboard_PreferencePage : (PreferencePageState);
+        T_AdminDashboard_ChangePassword : (ChangePasswordState);
+        T_AdminDashboard_Permission : (PermissionState);
+        T_CoursePage_LoginPage : (LoginPageState);
+        T_CoursePage_CPP : (CPPState);
+        T_CoursePage_DBMS : (DBMSState);
+        T_CoursePage_AdminDashboard : (AdminDashboardState);
+        T_CoursePage_EditPage : (EditPageState);
+        T_CoursePage_PreferencePage : (PreferencePageState);
+        T_CoursePage_ChangePassword : (ChangePasswordState);
+        T_CoursePage_Permission : (PermissionState);
+        T_PreferencePage_PermissionPage : (PermissionState);
+        T_PreferencePage_ChangePassword : (ChangePasswordState);
+        T_ProfilePage_EditPage : (EditPageState);
+        T_ProfilePage_LoginPage : (LoginPageState);
+        T_ProfilePage_AdminDashboard : (AdminDashboardState);
+        T_ProfilePage_CoursePage : (CoursePageState);
+        T_ProfilePage_CPP : (CPPState);
+        T_ProfilePage_DBMS : (DBMSState);
+        T_ProfilePage_PreferencePage : (PreferencePageState);
+        T_ProfilePage_ChangePassword : (ChangePasswordState);
+        T_ProfilePage_Permission : (PermissionState);
+        T_LoginPage_AdminDashboard : (AdminDashboardState);
+        T_LoginPage_CoursePage : (CoursePageState);
+        T_LoginPage_CPP : (CPPState);
+        T_LoginPage_DBMS : (DBMSState);
+        T_LoginPage_ProfilePage : (ProfilePageState);
+        T_LoginPage_EditPage : (EditPageState);
+        T_LoginPage_PreferencePage : (PreferencePageState);
+        T_LoginPage_ChangePassword : (ChangePasswordState);
+        T_LoginPage_Permission : (PermissionState);
+        T_EditPage_LoginPage : (LoginPageState);
+        T_EditPage_AdminDaschboard : (AdminDashboardState);
+        T_EditPage_CoursePage : (CoursePageState);
+        T_EditPage_CPP : (CPPState);
+        T_EditPage_DBMS : (DBMSState);
+        T_EditPage_ProfilePage : (ProfilePageState);
+        T_EditPage_PreferencePage : (PreferencePageState);
+        T_EditPage_ChangePassword : (ChangePasswordState);
+        T_EditPage_Permission : (PermissionState);
+		TRUE : Page;
+	esac;
+
+next(e1):=case 
+	(test=1):TRUE;
+	TRUE:FALSE;
+	esac;
+
+next(e2):=case 
+	(test=2):TRUE;
+	TRUE:FALSE;
+	esac;
+
+next(e3):=case 
+	(test=3):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e4):=case 
+	(test=4):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e5):=case 
+	(test=5):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e6):=case 
+	(test=6):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e7):=case 
+	(test=7):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e8):=case 
+	(test=8):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e9):=case 
+	(test=9):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e10):=case 
+	(test=10):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e11):=case 
+	(test=11):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e12):=case 
+	(test=12):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e13):=case 
+	(test=13):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e14):=case 
+	(test=14):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e15):=case 
+	(test=15):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e16):=case 
+	(test=16):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e17):=case 
+	(test=17):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e18):=case 
+	(test=18):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e19):=case 
+	(test=19):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e20):=case 
+	(test=20):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e21):=case 
+	(test=21):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e22):=case 
+	(test=22):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e23):=case 
+	(test=23):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e24):=case 
+	(test=24):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e25):=case 
+	(test=25):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e26):=case 
+	(test=26):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e27):=case 
+	(test=27):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e28):=case 
+	(test=28):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e29):=case 
+	(test=29):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e30):=case 
+	(test=30):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e31):=case 
+	(test=31):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e32):=case 
+	(test=32):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e33):=case 
+	(test=33):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e34):=case 
+	(test=34):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e35):=case 
+	(test=35):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e36):=case 
+	(test=36):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e37):=case 
+	(test=37):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e38):=case 
+	(test=38):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e39):=case 
+	(test=39):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e40):=case 
+	(test=40):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e41):=case 
+	(test=41):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e42):=case 
+	(test=42):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e43):=case 
+	(test=43):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e44):=case 
+	(test=44):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e45):=case 
+	(test=45):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e46):=case 
+	(test=46):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e47):=case 
+	(test=47):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e48):=case 
+	(test=48):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e49):=case 
+	(test=49):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e50):=case 
+	(test=50):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e51):=case 
+	(test=51):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e52):=case 
+	(test=52):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e53):=case 
+	(test=53):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e54):=case 
+	(test=54):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e55):=case 
+	(test=55):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e56):=case 
+	(test=56):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e57):=case 
+	(test=57):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e58):=case 
+	(test=58):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e59):=case 
+	(test=59):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e60):=case 
+	(test=60):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e61):=case 
+	(test=61):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e62):=case 
+	(test=62):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e63):=case 
+	(test=63):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e64):=case 
+	(test=64):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e65):=case 
+	(test=65):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e66):=case 
+	(test=66):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e67):=case 
+	(test=67):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e68):=case 
+	(test=68):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e69):=case 
+	(test=69):TRUE;
+	TRUE:FALSE;
+	esac;
+
+
+
+--SPEC
+--AG((Page=LoginPageState)->EF(Page=AdminDashboardState&usermode=10))
+
+--SPEC 
+--AG((Page=LoginPage)->EF(Page=CoursePage))
+
+SPEC 
+AG((Page=AdminDashboard)->EF(Page=LoginPage))

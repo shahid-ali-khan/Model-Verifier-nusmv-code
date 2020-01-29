@@ -1,0 +1,215 @@
+MODULE main
+VAR
+Page : {IState, LoginPageState, UserDashboardState, ProfileState, CourseOverviewState, PreferenceState, GradesState, UserProfileEditState};
+e1: boolean;
+e2: boolean;
+e3: boolean;
+e4: boolean;
+e5: boolean;
+e6: boolean;
+e7: boolean;
+e8: boolean;
+e9: boolean;
+e10: boolean;
+e11: boolean;
+e12: boolean;
+e13: boolean;
+e14: boolean;
+e15: boolean;
+e16: boolean;
+e17: boolean;
+e18: boolean;
+e19: boolean;
+e20: boolean;
+e21: boolean;
+e22: boolean;
+e23: boolean;
+
+test: {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23};
+ASSIGN
+init(Page) := LoginPageState;
+init(test) := 0;
+init(e1):=FALSE;
+init(e2):=FALSE;
+init(e3):=FALSE;
+init(e4):=FALSE;
+init(e5):=FALSE;
+init(e6):=FALSE;
+init(e7):=FALSE;
+init(e8):=FALSE;
+init(e9):=FALSE;
+init(e10):=FALSE;
+init(e11):=FALSE;
+init(e12):=FALSE;
+init(e13):=FALSE;
+init(e14):=FALSE;
+init(e15):=FALSE;
+init(e16):=FALSE;
+init(e17):=FALSE;
+init(e18):=FALSE;
+init(e19):=FALSE;
+init(e20):=FALSE;
+init(e21):=FALSE;
+init(e22):=FALSE;
+init(e23ds):=FALSE;
+
+
+DEFINE
+
+T_I_LoginPage := (Page=IState) ;
+T_LoginPage_UserDashboard := (Page= LoginPageState)&e1;
+T_LoginPage_CourseOverview := (Page= LoginPageState)&e2;
+T_LoginPage_Grades := (Page= LoginPageState)&e3;
+T_LoginPage_Preference := (Page= LoginPageState)&e4;
+
+T_UserDashboard_CourseOverview := (Page= UserDashboardState)&e5;
+T_UserDashboard_Grades := (Page= UserDashboardState)&e6;
+T_UserDashboard_Preference := (Page= UserDashboardState)&e7;
+T_UserDashboard_LoginPage := (Page= UserDashboardState)&e8;
+T_UserDashboard_Profile := (Page= UserDashboardState)&e9;
+T_UserDashboard_UserEditProfile := (Page= UserDashboardState)&e10;
+
+T_Profile_UserEditProfile := (Page= ProfileState)&e11;
+
+T_CourseOverview_Grades := (Page= CourseOverviewState)&e12;
+T_CourseOverview_Preference := (Page= CourseOverviewState)&e13;
+T_CourseOverview_LoginPage := (Page= CourseOverviewState)&e14;
+T_CourseOverview_UserDashboard := (Page= CourseOverviewState)&e15;
+
+T_Preference_LoginPage := (Page= PreferenceState)&e16;
+T_Preference_UserDashboard := (Page= PreferenceState)&e17;
+T_Preference_CourseOverview := (Page= PreferenceState)&e18;
+T_Preference_Grades := (Page= PreferenceState)&e19;
+
+T_Grades_LoginPage := (Page= GradesState)&e20;
+T_Grades_UserDashboard := (Page= GradesState)&e21;
+T_Grades_CourseOverview := (Page= GradesState)&e22;
+T_Grades_Preference := (Page= GradesState)&e23;
+
+ASSIGN
+next(test):={1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23};
+next(Page):=
+	case
+		T_I_LoginPage := Page=LoginPageState ;
+        T_LoginPage_UserDashboard := Page= LoginPageState;
+        T_LoginPage_CourseOverview := Page= CourseOverviewState;
+        T_LoginPage_Grades := (Page= GradesState)&e3;
+        T_LoginPage_Preference := (Page= PreferenceState)&e4;
+
+        T_UserDashboard_CourseOverview := (Page= CourseOverviewState)&e5;
+        T_UserDashboard_Grades := (Page= GradesState)&e6;
+        T_UserDashboard_Preference := (Page= PreferenceState)&e7;
+        T_UserDashboard_LoginPage := (Page= LoginPageState)&e8;
+        T_UserDashboard_Profile := (Page= ProfileState)&e9;
+        T_UserDashboard_UserEditProfile := (Page= UserProfileEditState)&e10;
+
+        T_Profile_UserEditProfile := (Page= UserProfileEditState)&e11;
+
+        T_CourseOverview_Grades := (Page= GradesState)&e12;
+        T_CourseOverview_Preference := (Page= PreferenceState)&e13;
+        T_CourseOverview_LoginPage := (Page= LoginPageState)&e14;
+        T_CourseOverview_UserDashboard := (Page= UserDashboardState)&e15;
+
+        T_Preference_LoginPage := (Page= LoginPageState)&e16;
+        T_Preference_UserDashboard := (Page= UserDashboardState)&e17;
+        T_Preference_CourseOverview := (Page= CourseOverviewState)&e18;
+        T_Preference_Grades := (Page= GradesState)&e19;
+
+        T_Grades_LoginPage := (Page= LoginPageState)&e20;
+        T_Grades_UserDashboard := (Page= UserDashboardState)&e21;
+        T_Grades_CourseOverview := (Page= CourseOverviewState)&e22;
+        T_Grades_Preference := (Page= PreferenceState)&e23;
+		TRUE : Page;
+	esac;
+next(e1):=case 
+	(test=1):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e2):=case 
+	(test=2):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e3):=case 
+	(test=3):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e4):=case 
+	(test=4):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e5):=case 
+	(test=5):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e6):=case 
+	(test=6):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e7):=case 
+	(test=7):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e8):=case 
+	(test=8):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e9):=case 
+	(test=9):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e10):=case 
+	(test=10):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e11):=case 
+	(test=11):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e12):=case 
+	(test=12):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e13):=case 
+	(test=13):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e14):=case 
+	(test=14):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e15):=case 
+	(test=15):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e16):=case 
+	(test=16):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e17):=case 
+	(test=17):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e18):=case 
+	(test=18):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e19):=case 
+	(test=19):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e20):=case 
+	(test=20):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e21):=case 
+	(test=21):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e22):=case 
+	(test=22):TRUE;
+	TRUE:FALSE;
+	esac;
+next(e23):=case 
+	(test=23):TRUE;
+	TRUE:FALSE;
+	esac;

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:sgraph="http://www.yakindu.org/sct/sgraph/2.0.0">
+  <sgraph:Statechart xmi:id="__Xt4cBTyEeqNf4vEEa8AaA" specification="interface:&#xA;in event StudentLogin&#xA;in event Profile&#xA;in event EditProfile&#xA;in event Logout&#xA;in event AdminLogin&#xA;in event SelectCourses&#xA;in event SelectDashboard&#xA;in event SelectCPP&#xA;in event SelectDBMS&#xA;in event SelectPreferences&#xA;in event Courses&#xA;in event Home&#xA;in event Grades&#xA;in event userProfile&#xA;in event Prefernces&#xA;in event requestper&#xA;in event changingPassword&#xA;&#xA;var Username:string&#xA;var Password:real&#xA;var Remember_username:string&#xA;var tick:string&#xA;var value:string&#xA;var passcode:real&#xA;var name:string&#xA;var address:string&#xA;var email:string&#xA;var country:string&#xA;var city:string&#xA;var CPP:string&#xA;var DBMS:string&#xA;var grant:string&#xA;var permission:string&#xA;&#xA;&#xA;&#xA;&#xA;" name="stateChart">
+    <regions xmi:id="__YQD8BTyEeqNf4vEEa8AaA" name="main region">
+      <vertices xsi:type="sgraph:Entry" xmi:id="__ZINsBTyEeqNf4vEEa8AaA">
+        <outgoingTransitions xmi:id="__ZNtQBTyEeqNf4vEEa8AaA" target="__ZKC4BTyEeqNf4vEEa8AaA"/>
+      </vertices>
+      <vertices xsi:type="sgraph:State" xmi:id="__ZKC4BTyEeqNf4vEEa8AaA" specification="entry/Username=value&#xD;&#xA;entry/Password=passcode&#xD;&#xA;entry/Remember_username=tick" name="LoginPage" incomingTransitions="__ZNtQBTyEeqNf4vEEa8AaA _NNPOEBUEEeqNf4vEEa8AaA _Op88UBUHEeqNf4vEEa8AaA _Xxn3MBUiEeqNf4vEEa8AaA">
+        <outgoingTransitions xmi:id="_VrUdYBTzEeqNf4vEEa8AaA" specification="AdminLogin[Username== value &amp;&amp;Password==passcode]" target="_MII28BTzEeqNf4vEEa8AaA"/>
+        <outgoingTransitions xmi:id="_G_5VUBT0EeqNf4vEEa8AaA" specification="StudentLogin[Username==value &amp;&amp;Password==passcode]" target="_NBlAYBTzEeqNf4vEEa8AaA"/>
+      </vertices>
+      <vertices xsi:type="sgraph:State" xmi:id="_MII28BTzEeqNf4vEEa8AaA" name="AdminDashboard" incomingTransitions="_VrUdYBTzEeqNf4vEEa8AaA _gRVpwBUHEeqNf4vEEa8AaA">
+        <outgoingTransitions xmi:id="_VmWBUBT0EeqNf4vEEa8AaA" specification="Profile" target="_RuBr8BT0EeqNf4vEEa8AaA"/>
+        <outgoingTransitions xmi:id="_NNPOEBUEEeqNf4vEEa8AaA" specification="Logout" target="__ZKC4BTyEeqNf4vEEa8AaA"/>
+        <outgoingTransitions xmi:id="_s56T0BUHEeqNf4vEEa8AaA" specification="SelectCourses" target="_nqG5ABUFEeqNf4vEEa8AaA"/>
+        <outgoingTransitions xmi:id="_VqGogBULEeqNf4vEEa8AaA" specification="SelectPreferences" target="_XvzboBUJEeqNf4vEEa8AaA"/>
+      </vertices>
+      <vertices xsi:type="sgraph:State" xmi:id="_NBlAYBTzEeqNf4vEEa8AaA" name="UserDashBoard" incomingTransitions="_G_5VUBT0EeqNf4vEEa8AaA _GZxewBUbEeqNf4vEEa8AaA _vKNHMBUiEeqNf4vEEa8AaA">
+        <outgoingTransitions xmi:id="__1ZLwBUaEeqNf4vEEa8AaA" specification="Courses" target="_8IzlQBUaEeqNf4vEEa8AaA"/>
+        <outgoingTransitions xmi:id="_sREloBUcEeqNf4vEEa8AaA" specification="userProfile" target="_rXfSxRUcEeqNf4vEEa8AaA"/>
+      </vertices>
+      <vertices xsi:type="sgraph:State" xmi:id="_RuBr8BT0EeqNf4vEEa8AaA" name="ProfilePage" incomingTransitions="_VmWBUBT0EeqNf4vEEa8AaA">
+        <outgoingTransitions xmi:id="_L2R3oBUDEeqNf4vEEa8AaA" specification="EditProfile" target="_Gs7YMBUDEeqNf4vEEa8AaA"/>
+      </vertices>
+      <vertices xsi:type="sgraph:State" xmi:id="_Gs7YMBUDEeqNf4vEEa8AaA" name="EditProfile" incomingTransitions="_L2R3oBUDEeqNf4vEEa8AaA">
+        <outgoingTransitions xmi:id="_Op88UBUHEeqNf4vEEa8AaA" specification="Logout" target="__ZKC4BTyEeqNf4vEEa8AaA"/>
+      </vertices>
+      <vertices xsi:type="sgraph:State" xmi:id="_nqG5ABUFEeqNf4vEEa8AaA" specification="" name="CoursePage" incomingTransitions="_s56T0BUHEeqNf4vEEa8AaA">
+        <outgoingTransitions xmi:id="_gRVpwBUHEeqNf4vEEa8AaA" specification="SelectDashboard" target="_MII28BTzEeqNf4vEEa8AaA"/>
+        <outgoingTransitions xmi:id="_ImDDsBUIEeqNf4vEEa8AaA" specification="SelectCPP" target="_8BJ_wBUHEeqNf4vEEa8AaA"/>
+        <outgoingTransitions xmi:id="_dubysBUIEeqNf4vEEa8AaA" specification="SelectDBMS" target="_Ab-lQBUIEeqNf4vEEa8AaA"/>
+      </vertices>
+      <vertices xsi:type="sgraph:State" xmi:id="_8BJ_wBUHEeqNf4vEEa8AaA" specification="" name="CPP" incomingTransitions="_ImDDsBUIEeqNf4vEEa8AaA"/>
+      <vertices xsi:type="sgraph:State" xmi:id="_Ab-lQBUIEeqNf4vEEa8AaA" name="DBMS" incomingTransitions="_dubysBUIEeqNf4vEEa8AaA"/>
+      <vertices xsi:type="sgraph:State" xmi:id="_XvzboBUJEeqNf4vEEa8AaA" specification="" name="PreferencePage" incomingTransitions="_VqGogBULEeqNf4vEEa8AaA">
+        <outgoingTransitions xmi:id="_Ni8ZgBUeEeqNf4vEEa8AaA" specification="requestper[permission==grant]" target="_DUkhABUeEeqNf4vEEa8AaA"/>
+        <outgoingTransitions xmi:id="_8GrhgBUeEeqNf4vEEa8AaA" specification="changingPassword" target="_GF9DgBUeEeqNf4vEEa8AaA"/>
+      </vertices>
+      <vertices xsi:type="sgraph:State" xmi:id="_8IzlQBUaEeqNf4vEEa8AaA" name="CourseOverview" incomingTransitions="__1ZLwBUaEeqNf4vEEa8AaA">
+        <outgoingTransitions xmi:id="_GZxewBUbEeqNf4vEEa8AaA" specification="Home" target="_NBlAYBTzEeqNf4vEEa8AaA"/>
+        <outgoingTransitions xmi:id="_R1NAQBUbEeqNf4vEEa8AaA" specification="Grades" target="_QBY5QBUbEeqNf4vEEa8AaA"/>
+      </vertices>
+      <vertices xsi:type="sgraph:State" xmi:id="_QBY5QBUbEeqNf4vEEa8AaA" name="Grades" incomingTransitions="_R1NAQBUbEeqNf4vEEa8AaA">
+        <outgoingTransitions xmi:id="_I4bAkBUdEeqNf4vEEa8AaA" specification="Prefernces" target="_IGAFIBUdEeqNf4vEEa8AaA"/>
+        <outgoingTransitions xmi:id="_vKNHMBUiEeqNf4vEEa8AaA" specification="Home" target="_NBlAYBTzEeqNf4vEEa8AaA"/>
+      </vertices>
+      <vertices xsi:type="sgraph:State" xmi:id="_rXfSxRUcEeqNf4vEEa8AaA" name="Profile" incomingTransitions="_sREloBUcEeqNf4vEEa8AaA">
+        <outgoingTransitions xmi:id="_d4UvsBUiEeqNf4vEEa8AaA" specification="EditProfile" target="_dX5jMBUiEeqNf4vEEa8AaA"/>
+      </vertices>
+      <vertices xsi:type="sgraph:State" xmi:id="_IGAFIBUdEeqNf4vEEa8AaA" specification="" name="Prefernces" incomingTransitions="_I4bAkBUdEeqNf4vEEa8AaA">
+        <outgoingTransitions xmi:id="_Xxn3MBUiEeqNf4vEEa8AaA" specification="Logout" target="__ZKC4BTyEeqNf4vEEa8AaA"/>
+      </vertices>
+      <vertices xsi:type="sgraph:State" xmi:id="_DUkhABUeEeqNf4vEEa8AaA" name="permissionPage" incomingTransitions="_Ni8ZgBUeEeqNf4vEEa8AaA"/>
+      <vertices xsi:type="sgraph:State" xmi:id="_GF9DgBUeEeqNf4vEEa8AaA" name="changepassword" incomingTransitions="_8GrhgBUeEeqNf4vEEa8AaA"/>
+      <vertices xsi:type="sgraph:State" xmi:id="_dX5jMBUiEeqNf4vEEa8AaA" name="userprofileEdit" incomingTransitions="_d4UvsBUiEeqNf4vEEa8AaA"/>
+    </regions>
+  </sgraph:Statechart>
+  </xmi:XMI>
